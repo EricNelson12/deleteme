@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="script.js"></script>
+    <title>Neon Prism</title>
+    <link rel="icon" href="images/favicon-2.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles-main.css">
+</head>
+
+<body class="hero-background pt-5">
+    <div class="d-flex flex-row">
+        <p>Highscores:</p>
+        <div id="scores"></div>
+        <script>
+            fetch('/highscore').then((response) => response.json())
+                .then((data) => {
+                    let scoresElement = document.getElementById('scores')
+                    scoresElement.innerHTML = ''
+                    scores = document.createTextNode(data['score'][0]);
+                    scoresElement.appendChild(scores)
+                })
+        </script>
+
+        <div class="hero-container-text d-flex flex-column">
+        
+            <h2>im the problem.</h2>
+        </div>
+        <div class="hero-container-image image-glow d-flex">
+        </div>
+    </div>
+    <div class="star-container star-glow d-flex"></div>
+</body>
+
+</html>
