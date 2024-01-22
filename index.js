@@ -6,7 +6,7 @@ let port = 8080
 // var usersRouter = require('./routes/users');
 var app = express();
 
-var highscores = []
+var highscores = ["0"]
 
 app.use(logger('dev'));
 app.use(express.json());
